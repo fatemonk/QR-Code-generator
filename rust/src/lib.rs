@@ -117,28 +117,28 @@ pub struct QrCode {
 	
 	// The version number of this QR Code, which is between 1 and 40 (inclusive).
 	// This determines the size of this barcode.
-	version: Version,
+	pub version: Version,
 	
 	// The width and height of this QR Code, measured in modules, between
 	// 21 and 177 (inclusive). This is equal to version * 4 + 17.
-	size: i32,
+	pub size: i32,
 	
 	// The error correction level used in this QR Code.
-	errorcorrectionlevel: QrCodeEcc,
+	pub errorcorrectionlevel: QrCodeEcc,
 	
 	// The index of the mask pattern used in this QR Code, which is between 0 and 7 (inclusive).
 	// Even if a QR Code is created with automatic masking requested (mask = None),
 	// the resulting object still has a mask value between 0 and 7.
-	mask: Mask,
+	pub mask: Mask,
 	
 	// Grids of modules/pixels, with dimensions of size*size:
 	
 	// The modules of this QR Code (false = light, true = dark).
 	// Immutable after constructor finishes. Accessed through get_module().
-	modules: Vec<bool>,
+	pub modules: Vec<bool>,
 	
 	// Indicates function modules that are not subjected to masking. Discarded when constructor finishes.
-	isfunction: Vec<bool>,
+	pub isfunction: Vec<bool>,
 	
 }
 
